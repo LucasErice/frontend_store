@@ -1,0 +1,103 @@
+@import "generales";
+@import "nosotros";
+@import "productos";
+
+.header{
+    display: flex;
+    justify-content: center;
+
+    .header__logo{
+        margin-top: 3rem;
+    }
+}
+
+.navegacion{
+    background-color: $primarioOscuro;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    .navegacion__enlace{
+        font-family: $fuentePrincipal;
+        color: $blanco;
+        font-size: 3rem;
+        &:hover{
+            color: $secundario;
+        }
+    }
+}
+
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    
+    @media(min-width: 768px){
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media(max-width: 550px){
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .producto{
+        background-color: $primarioOscuro;
+        padding: 1rem;
+
+        .producto__nombre{
+            font-size: 4rem;
+            font-family: $fuentePrincipal;
+            margin: 1rem 0;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .producto__precio{
+            font-size: 2.8rem;
+            font-family: $fuentePrincipal;
+            margin: 1rem 0;
+            text-align: center;
+            color: $secundario;
+            line-height: 1.2;
+        }
+    }
+
+    .grafico{
+        min-height: 30rem;
+    }
+
+    .grafico--camisa{
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+        background-image: url(../img/grafico1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .grafico--node{
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+        background-image: url(../img/grafico2.jpg);
+        grid-column: 2 / 4 ;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+
+.footer{
+    background-color: $primarioOscuro;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    width: 100%;
+
+    .footer__texto{
+        font-family: $fuentePrincipal;
+        font-size: 2.2rem;
+        text-align: center;
+    }
+}
